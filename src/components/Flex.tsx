@@ -19,13 +19,11 @@ const Flex: React.FC<FlexProps> = ({
   children,
 }) => {
   const flexClasses = clsx(
-    display === "grid" && "grid",
-    display === "flex" && "flex",
-    display === "none" && "hidden",
+    display,
+    className,
     justifyContent && `justify-${justifyContent}`,
     alignItems && `items-${alignItems}`,
-    direction && `flex-${direction}`,
-    className
+    direction && `flex-${direction}`
   );
 
   return <div className={flexClasses}>{children}</div>;
